@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    position: relative;
+    /* bottom: 50%; */
+    background-color: aquamarine;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.container>*{
+    /* margin: 20px; */
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+footer{
+    position: absolute;
+    top: 80%;
+    left: 25%;
+    bottom: 30%;
+}
+#red{
+    background-color: red;color: white;
+}
+#green{
+    background-color: green;color: white;
+}
+#blue{
+    background-color: blue;color: white;
+}
+#default{
+    background-color: white;color: black;
+}
+#yellow{
+    background-color: yellow;color: black;
+}

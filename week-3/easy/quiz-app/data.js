@@ -57,10 +57,9 @@ function setQuestion() {
   ele[3].value = currentQuiz.d;
 }
 document.addEventListener("DOMContentLoaded", setQuestion);
-function checkForNoAnswer() {}
 function checkAnswer() {
   let chosenOption;
-  if (currentQuestion < 3) {
+  if (currentQuestion <= 3) {
     const radioButtons = document.querySelectorAll('input[type="radio"]');
     const selectedOption = Array.from(radioButtons).find(
       (radio) => radio.checked
@@ -83,36 +82,41 @@ function checkAnswer() {
     const keys = Object.keys(obj);
     for (const key_opt of keys) {
       if (obj[key_opt] === chosenOption) {
-        console.log(key_opt);
+        // console.log(key_opt);
         a = key_opt;
       }
     }
 
     for (const key_ans in obj) {
       if (key_ans === "correct") {
-        console.log(obj[key_ans]);
+        // console.log(obj[key_ans]);
         b = obj[key_ans];
       }
     }
 
     if (a === b) {
-      console.log("correct");
+      // console.log("correct");
       score++;
-      console.log(score);
+      // console.log(score);
     } else {
-      console.log("wrong");
+      // console.log("wrong");
     }
-
     currentQuestion++;
-    setQuestion();
-  } else {
-    document.querySelector(
-      "#question"
-    ).innerHTML = `<h1>Score : <br> ${score} / 4</h1>`;
-    document.querySelector("#questions").innerHTML = "";
-    document.querySelector(".container").classList.add("flex");
-    document.getElementById("reset").style.display = "flex";
+    if (currentQuestion < quizData.length) {
+      setQuestion();
+    } else {
+      showFinalScore();
+    }
   }
+}
+
+function showFinalScore() {
+  document.querySelector(
+    "#question"
+  ).innerHTML = `<h1>Score : <br> ${score} / 4</h1>`;
+  document.querySelector("#questions").innerHTML = "";
+  document.querySelector(".container").classList.add("flex");
+  document.getElementById("reset").style.display = "flex";
 }
 function reset() {
   location.href = "http://127.0.0.1:3000/week-3/easy/quiz-app/index.html";

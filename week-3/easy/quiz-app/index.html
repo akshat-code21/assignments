@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+    
+  </head>
+  <body>
+    <header>
+      <h1>Quiz App</h1>
+    </header>
+    <main>
+      <div class="container">
+        <div class="quiz-container">
+          <div id="heading">
+            <h1 id="question">Question ?</h1>
+          </div>
+          <form id="questions">
+            <div class="options" id="o1">
+              <input type="radio" name="radio" id="op1">
+              <label for="op1">Option 1</label>
+            </div>
+            <div class="options" id="o2">
+              <input type="radio" name="radio" id="op2">
+              <label for="op2">Option 2</label>
+            </div>
+            <div class="options" id="o3">
+              <input type="radio" name="radio" id="op3">
+              <label for="op3">Option 3</label>
+            </div>
+            <div class="options" id="o4">
+              <input type="radio" name="radio" id="op4">
+              <label for="op4">Option 4</label>
+            </div>
+          </form>
+          <div id="reset" onclick="reset()">Restart Quiz</div>
+          <div id="submit" onclick="checkAnswer()">Submit</div>
+        </div>
+      </div>
+    </main>
+    <script src="data.js"></script>
+  </body>
+</html>
+<!-- </input> -->

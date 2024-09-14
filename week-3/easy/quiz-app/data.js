@@ -36,6 +36,7 @@ const quizData = [
 ];
 let currentQuestion = 0;
 let score = 0;
+let nos = quizData.length;
 function setQuestion() {
   const radioButtons = document.querySelectorAll('input[type="radio"]');
   radioButtons.forEach((radio) => {
@@ -59,7 +60,7 @@ function setQuestion() {
 document.addEventListener("DOMContentLoaded", setQuestion);
 function checkAnswer() {
   let chosenOption;
-  if (currentQuestion <= 3) {
+  if (currentQuestion <= (nos-1)) {
     const radioButtons = document.querySelectorAll('input[type="radio"]');
     const selectedOption = Array.from(radioButtons).find(
       (radio) => radio.checked
@@ -69,7 +70,7 @@ function checkAnswer() {
       return;
     }
     var ele = document.getElementsByTagName("input");
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < nos; i++) {
       if (ele[i].checked === true) {
         chosenOption = ele[i].value;
       }
@@ -102,7 +103,7 @@ function checkAnswer() {
       // console.log("wrong");
     }
     currentQuestion++;
-    if (currentQuestion < quizData.length) {
+    if (currentQuestion < nos) {
       setQuestion();
     } else {
       showFinalScore();
@@ -113,7 +114,7 @@ function checkAnswer() {
 function showFinalScore() {
   document.querySelector(
     "#question"
-  ).innerHTML = `<h1>Score : <br> ${score} / 4</h1>`;
+  ).innerHTML = `<h1>Score : <br> ${score} / ${nos}</h1>`;
   document.querySelector("#questions").innerHTML = "";
   document.querySelector(".container").classList.add("flex");
   document.getElementById("reset").style.display = "flex";

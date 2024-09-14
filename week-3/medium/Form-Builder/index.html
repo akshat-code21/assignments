@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Builder</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Form Builder</h1>
+    </header>
+    <main>
+      <div class="container">
+        <div class="left">
+            <div class="heading">Form Builder</div>
+            <div class="field-type">
+                <h2>Select Field Type</h2>
+                <select name="" id="select-field">
+                    <option value="Text">Text Input</option>
+                    <option value="Email">Email</option>
+                    <option value="Password">Password</option>
+                    <option value="Checkbox">Checkbox</option>
+                    <option value="Radio">Radio</option>
+                    <option value="Submit">Submit Button</option>
+                </select>
+            </div>
+            <div class="field-label">
+                <input type="text" name="" id="label" placeholder="Enter field label / Button text">
+            </div>
+            <button class="addField" onclick="addField()">Add Field</button>
+        </div>
+        <div class="right">
+            <div class="heading">Form Preview</div>
+            <div class="form">
+                <form action="#" id="form-output">
+                    <!-- <label for="">Akshat</label>
+                    <input type="text" name="" id=""> -->
+                    <!-- <button>Hi</button> -->
+                </form>
+            </div>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

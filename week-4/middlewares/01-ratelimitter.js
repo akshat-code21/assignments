@@ -16,7 +16,24 @@ setInterval(() => {
     numberOfRequestsForUser = {};
 }, 1000)
 
+function rateLimitter(req,res,next){
+  const username = req.query.user-id;
+  if(!(Object.keys(numberOfRequestsForUser).find((key)=>numberOfRequestsForUser[key]===username)))
+  {
+    next()
+  }
+  else{
+    res.status(404).json({
+      message : "Too many requests"
+    })
+    console.log("Too many requests");
+  }
+}
+
+app.use(rateLimitter());
 app.get('/user', function(req, res) {
+  const username = req.query.username
+  numberOfRequestsForUser.push({username : username})
   res.status(200).json({ name: 'john' });
 });
 

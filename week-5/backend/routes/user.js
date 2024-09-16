@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 const { users } = require('../db/index');
 const jwt = require("jsonwebtoken");
-const { auth, JWT_SECRET } = require("../middleware/user");
+const {JWT_SECRET} = require("../middleware/user");
 
 router.post("/signup", (req, res) => {
   const username = req.body.username;

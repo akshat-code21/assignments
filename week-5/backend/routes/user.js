@@ -5,8 +5,6 @@ const { users } = require('../db/index');
 const jwt = require("jsonwebtoken");
 const { auth, JWT_SECRET } = require("../middleware/user");
 
-// const usersArray = [];
-
 router.post("/signup", (req, res) => {
   const username = req.body.username;
   const password = req.body.password;

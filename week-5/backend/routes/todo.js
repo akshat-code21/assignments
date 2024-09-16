@@ -16,7 +16,7 @@ router.post('/setTodo',authMiddleware.auth,(req,res)=>{
         title,
         isCompleted: false
     };
-    todos.push(newTodo); // Add the new todo to the array
+    todos.push(newTodo); 
     todoId++;
     res.json({ message: "Todo successfully added", todos });
 })
@@ -49,6 +49,6 @@ router.get("/showTodos",authMiddleware.auth,(req, res) => {
   if (username) {
     res.json(todos);
   }
-}); //  start writing your code from here
+}); 
 
 module.exports = router;

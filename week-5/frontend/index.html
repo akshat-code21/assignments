@@ -5,85 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Taskify Frontend</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <header>
-      <h1 class="heading">To Do List</h1>
+      <h1>To Do List Assignment</h1>
     </header>
-    <section>
-      <div
-        class="container"
-      >
-        <h3 class="title">
-          To-Do List
-        </h3>
-        <div class="search-box">
-          <input
-            type="text"
-            name=""
-            id="addItems"
-            placeholder="Enter the task"
-            class="enterTask"
-          />
-          <button
-            class="addBtn"
-            id="addBtn"
-          >
-            Add
-          </button>
+    <div class="container">
+      <div class="message">
+        <h1>Please Signup & Login</h1>
+      </div>
+      <div class="auth">
+        <div class="signup">
+          <h1>Signup</h1>
+          <input type="text" placeholder="Enter username">
+          <input type="password" placeholder="Enter password">
+          <button>Signup</button>
         </div>
-        <div id="display-box" class="display-box">
-          <ul
-            class="list-image-[url(src/circle-stroke-rounded.svg)]"
-            id="display-list"
-          >
-            <!-- <li
-                class="relative mt-[10px] ml-[13px] mb-[10px] p-[px] text-[20px] cursor-pointer"
-              >
-                Learn JS
-                <button
-                  class="absolute right-1 top-1/2 transform -translate-y-1/2" id="clearTask" onclick="clearTask(this)"
-                >
-                  <img
-                    src="src/cancel-01-stroke-rounded.svg"
-                    alt=""
-                    class="h-5 w-5"
-                  />
-                </button>
-              </li>
-            
-              <li
-                class="relative mt-[10px] ml-[13px] mb-[10px] p-[px] text-[20px] cursor-pointer"
-              >
-                Build Projects
-                <button
-                  class="absolute right-1 top-1/2 transform -translate-y-1/2" onclick="clearTask(this)" id="clearTask"
-                >
-                  <img
-                    src="src/cancel-01-stroke-rounded.svg"
-                    alt=""
-                    class="h-5 w-5"
-                  />
-                </button>
-              </li>
-              <li
-                class="relative mt-[10px] ml-[13px] mb-[10px] p-[px] text-[20px] cursor-pointer"
-              >
-                Deploy
-                <button
-                  class="absolute right-1 top-1/2 transform -translate-y-1/2" id="clearTask" onclick="clearTask(this)"
-                >
-                  <img
-                    src="src/cancel-01-stroke-rounded.svg"
-                    alt=""
-                    class="h-5 w-5"
-                  />
-                </button>
-              </li> -->
-          </ul>
+        <div class="login">
+          <h1>Login</h1>
+          <input type="text" placeholder="Enter username">
+          <input type="password" placeholder="Enter password">
+          <button>Login</button>
         </div>
       </div>
-    </section>
-    <script src="./script.js"></script>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>

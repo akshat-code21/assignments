@@ -4,47 +4,58 @@
   box-sizing: border-box;
 }
 header{
-  display:flex;
-  justify-content: center;
+  display: flex;
   align-items: center;
+  justify-content: center;
   height: 10vh;
-  background-color: orange;
-}
-.heading{
-  font-size: 36px;
-  font-weight: bold;
+  background-color: aquamarine;
 }
 .container{
-  width: 40vw;
-  background-color: white;
-  border: 2px solid;
-  border-radius: 12px;
   margin: auto;
-  margin-top: 100px;
+  border: 2px solid black;
+  margin-top: 80px;
+  padding: 30px;
 }
-.title{
-  margin: 10px;
-  padding: 10px;
-  font-weight: bold;
-  font-size: 30px;
+.message{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.auth{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 50px;
+}
+.signup,.login{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px solid red;
+  padding: 20px;
+  gap: 20px;
+}
+.signup input,.login input{
+  padding: 12px;
+  border-radius: 7px;
+  border: 2px solid blue;
+}
+.signup input:hover ,.login input:hover {
+  border: 2px solid blueviolet;
+}
+.signup h1,.login h1{
   text-align: center;
 }
-.enterTask{
-  margin: 10px;
+.signup button,.login button{
   padding: 10px;
-  width:80%;
-  border: 2px solid;
-  border-radius: 7px;
-}
-.addBtn{
-  width: 15%;
-  background-color: orange;
-  padding: 10px;
-  border-radius: 16px;
+  background-color: purple;
   color: white;
+  font-weight: bold;
+  border-radius: 7px;
   cursor: pointer;
 }
-.display-box{
-  margin-top: 20px;
-  margin-left: 20px;
+.login{
+  border: 2px solid green;
 }

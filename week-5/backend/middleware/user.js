@@ -1,6 +1,6 @@
 //  start writing from here
 const jwt = require('jsonwebtoken');
-const JWT_SECRET = "s3cr3t";
+const {JWT_SECRET} = require('../config/config.js');
 function auth(req,res,next){
     const token = req.headers.token;
     
@@ -11,7 +11,7 @@ function auth(req,res,next){
         next()
     }
     else{
-        res.json({
+        res.status(403).json({
             message : "Incorrect Creds."
         })
     }

@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 const { users } = require('../db/index');
 const jwt = require("jsonwebtoken");
-const {JWT_SECRET} = require("../middleware/user");
+const {JWT_SECRET} = require("../config/config");
 
 router.post("/signup", (req, res) => {
   const username = req.body.username;
@@ -25,7 +25,7 @@ router.post("/signin", (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
 
-  let foundUser = users.find((user) => user.username === username);
+  let foundUser = users.find((user) => user.username === username && user.password=== password);
   if (foundUser) {
     let token = jwt.sign(
       {

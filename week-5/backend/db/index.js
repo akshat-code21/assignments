@@ -1,8 +1,5 @@
 //  start writing from here
-const users = [{
-    id : 1,
-    title : "hello",
-    isCompleted : false,
-}];
+let users = [];
+let todos = [];
 
-module.exports={users};
+module.exports={users,todos};

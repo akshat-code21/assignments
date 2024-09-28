@@ -1,54 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todos</title>
-    <link rel="stylesheet" href="todos.style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="todos.style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
     <header>
-        <h1>Welcome to Todo App</h1>
+      <h1>Welcome to Todo App</h1>
     </header>
+    <h1 style="display: block;margin: 0 auto; text-align: center; margin-top: 10px;">Todos Appear below</h1>
     <div class="container">
-        <div class="todos">
-            <div class="todo">
-                <h2>Title</h2>
-                <h4>Task No : 1</h4>
-                <div class="status">
-                   In progress...
-                </div>
-                <h5>Date Created : </h5>
-                <div class="operations">
-                    <button id="edit">Edit</button>
-                    <button id="delete">Delete</button>
-                </div>
-            </div>
-            <div class="todo">
-                <h2>Title</h2>
-                <h4>Task No : 2</h4>
-                <div class="status" style="background-color: green;">
-                   Done
-                </div>
-                <h5>Date Created : </h5>
-                <div class="operations">
-                    <button id="edit">Edit</button>
-                    <button id="delete">Delete</button>
-                </div>
-            </div>
+      <div class="todos" id="todos">
+        <div class="todo">
+          <h2>Title</h2>
+          <h4>Task No : 1</h4>
+          <div class="status">In progress...</div>
+          <h5>Date Created :</h5>
+          <div class="operations">
+            <button class="done">Mark Done</button>
+            <button class="edit">Edit</button>
+            <button class="delete">Delete</button>
+          </div>
         </div>
+        <div class="todo">
+          <h2>Title</h2>
+          <h4>Task No : 2</h4>
+          <div class="status" style="background-color: green">Done</div>
+          <h5>Date Created :</h5>
+          <div class="operations">
+            <button id="edit">Edit</button>
+            <button id="delete">Delete</button>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="addTodoContainer">
-        <h2>Add a Todo</h2>
-        <div class="main">
-            <div class="addTodo">
-                <input type="text" name="" id="addTodo" placeholder="Enter the task to be added">
-                <button>Add</button>
-            </div>
+      <h2>Add a Todo</h2>
+      <div class="main">
+        <div class="addTodo">
+          <input
+            type="text"
+            name=""
+            id="addTodo"
+            placeholder="Enter the task to be added"
+          />
+          <button onclick="addTodo()">Add</button>
         </div>
+      </div>
     </div>
-</body>
+    <script src="todos.script.js"></script>
+  </body>
 </html>

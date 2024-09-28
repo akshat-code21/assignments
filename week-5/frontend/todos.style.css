@@ -4,6 +4,9 @@
     box-sizing: border-box;
     font-family: "Ubuntu", sans-serif;
 }
+body{
+    background-color: #DAF7DC;
+}
 header{
     display: flex;
     align-items: center;
@@ -15,11 +18,11 @@ header{
     border: 2px solid black;
     margin: auto;
     margin-top: 80px;
-    padding: 30px;
+    padding: 20px;
     background-color: #FFEE93;
 }
 .todos{
-    border: 2px solid red;
+    /* border: 2px solid red; */
     padding: 30px;
     display: flex;
     flex-direction: row;
@@ -35,6 +38,7 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    gap: 10px;
 }
 .operations{
     margin-top: 5px;
@@ -45,12 +49,12 @@ header{
     border-radius: 7px;
     font-size: 12px;
     cursor: pointer;
-   
+    margin: 0 5px;
 }
-#edit{
+.edit{
     background-color: #ADF7B6;
 }
-#delete{
+.delete{
     background-color: rgb(223, 61, 61);
     color: white;
 }
@@ -77,7 +81,7 @@ header{
     color: white;
 }
 .main{
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -104,4 +108,8 @@ header{
     border-radius: 7px;
     background-color: #FFC09F;
     cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    border: transparent;
+    border: 2px solid black;
 }

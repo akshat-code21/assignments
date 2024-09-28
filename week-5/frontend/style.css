@@ -2,15 +2,25 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Fredoka", sans-serif;
+}
+body{
+  background-color: #D1F0B1;
 }
 header{
   display: flex;
   align-items: center;
   justify-content: center;
   height: 10vh;
-  background-color: aquamarine;
+  background-color: #F0A202;
+  font-size: 30px;
+  font-weight: 300;
+}
+header h1{
+  font-weight: 500;
 }
 .container{
+  background-color: #B2ABF2;
   margin: auto;
   border: 2px solid black;
   margin-top: 80px;
@@ -21,29 +31,44 @@ header{
   align-items: center;
   justify-content: center;
 }
+.message h1{
+  font-weight: 500;
+}
 .auth{
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 60px;
   margin-top: 50px;
+}
+.signup{
+  background-color: #272d33;
+  color: white;
+  border-radius: 7px;
+  border:2px solid white !important;
 }
 .signup,.login{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 2px solid red;
+  border: 2px solid #202C59;
   padding: 20px;
   gap: 20px;
+  width: 40%;
+}
+.signup h1,.login h1{
+  font-weight: 400;
 }
 .signup input,.login input{
   padding: 12px;
   border-radius: 7px;
+  font-size: 16px;
   border: 2px solid blue;
 }
 .signup input:hover ,.login input:hover {
   border: 2px solid blueviolet;
+  
 }
 .signup h1,.login h1{
   text-align: center;
@@ -52,10 +77,14 @@ header{
   padding: 10px;
   background-color: purple;
   color: white;
-  font-weight: bold;
+  font-weight: 400;
   border-radius: 7px;
   cursor: pointer;
+  font-size: 18px;
+  border: transparent;
 }
 .login{
-  border: 2px solid green;
+  border: 2px solid #202C59;
+  background-color: #60AFFF;
+  border-radius: 7px;
 }

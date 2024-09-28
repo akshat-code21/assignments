@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    background-color: #79ADDC;
+}
+.container{
+    border: 2px solid black;
+    margin: auto;
+    margin-top: 80px;
+    padding: 30px;
+    background-color: #FFEE93;
+}
+.todos{
+    border: 2px solid red;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.todo{
+    border: 2px solid green;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.operations{
+    margin-top: 5px;
+}
+.operations button{
+    padding: 5px;
+    border : 2px solid black;
+    border-radius: 7px;
+    font-size: 12px;
+    cursor: pointer;
+   
+}
+#edit{
+    background-color: #ADF7B6;
+}
+#delete{
+    background-color: rgb(223, 61, 61);
+    color: white;
+}
+.status{
+    border: 2px solid rgb(210, 207, 207);
+    border-radius: 10px ;
+    text-align: center;
+    font-size: 12px;
+    background-color: red;
+    color: white;
+    padding: 3px;
+}
+.addTodoContainer{
+    border: 2px solid black;
+    margin: auto;
+    margin-top: 50px;
+    width: 40vw;
+    padding: 20px;
+    background-color: #53917E;
+}
+.addTodoContainer h2{
+    text-align: center;
+    text-decoration: underline;
+    color: white;
+}
+.main{
+    border: 2px solid blue;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+.addTodo{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+}
+.addTodo input{
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+}
+.addTodo button{
+    padding: 10px;
+    border-radius: 7px;
+    background-color: #FFC09F;
+    cursor: pointer;
+}

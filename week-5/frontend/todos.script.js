@@ -18,10 +18,12 @@ async function showTodos() {
         token: token,
       },
     });
-    let todos = response.data;  
+    let todos = response.data;
     let parent = document.getElementById("todos");
     parent.innerHTML = "";
     todos.forEach((todo, index) => {
+      let todoId = todo.id;  
+
       let child = document.createElement("div");
       child.classList.add("todo");
 
@@ -33,23 +35,29 @@ async function showTodos() {
 
       let statusDiv = document.createElement("div");
       statusDiv.classList.add("status");
+      if(todo.isCompleted===false){
       statusDiv.innerHTML = "In progress...";
-      statusDiv.style.backgroundColor = "red"; 
-
+      statusDiv.style.backgroundColor = "red";
+      }
+      else{
+        statusDiv.innerHTML = "Completed";
+        statusDiv.style.backgroundColor = "green";
+      }
       const date = new Date();
       let day = date.getDate();
       let month = date.getMonth() + 1;
       let year = date.getFullYear();
       let currentDate = `${day}-${month}-${year}`;
-    
 
       let date_created = document.createElement("h5");
       date_created.innerHTML = `Date Created : ${currentDate}`;
 
       let ops = document.createElement("div");
       ops.classList.add("operations");
-      ops.innerHTML =
-        "<button class='done'>Mark Done</button><button class='edit'>Edit</button><button class='delete'>Delete</button>";
+      ops.innerHTML = `
+        <button class='done' onclick='changeStatus(${todoId})'>Mark Done</button>
+        <button class='edit' onclick='editTodo(${todoId})'>Edit</button>
+        <button class='delete' onclick='deleteTodo(${todoId})'>Delete</button>`;
 
       child.appendChild(todoTitle);
       child.appendChild(task_no);
@@ -62,6 +70,37 @@ async function showTodos() {
   } catch (err) {
     console.error("Error fetching todos:", err);
     return;
+  }
+}
+
+async function changeStatus(id){
+  try
+  {
+    let todotoBeMarked = await axios.put(`http://localhost:3000/todo/markDone/?id=${id}`,{}, {
+      headers: {
+        token: token,
+      },
+    });
+    if(todotoBeMarked)
+    {
+      showTodos()
+    }
+  }
+  catch(err)
+  {
+    console.error(err)
+  }
+}
+async function deleteTodo(id) {
+  try {
+    let todotoBeDeleted = await axios.delete(`http://localhost:3000/todo/deleteTodo/?id=${id}`,{
+      headers: {
+        token: token,
+      },
+    });
+    showTodos();
+  } catch (err) {
+    console.error("Error deleting todo:", err);
   }
 }
 
@@ -82,7 +121,7 @@ async function addTodo() {
 
     if (res) {
       alert("Todo added successfully");
-      document.getElementById("addTodo").value = ""
+      document.getElementById("addTodo").value = "";
       showTodos();
     } else {
       console.log("Error adding todo.");

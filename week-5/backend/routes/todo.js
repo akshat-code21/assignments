@@ -33,6 +33,26 @@ router.put('/changeTodo/',authMiddleware.auth,(req,res)=>{
         })
     }
 })
+router.put('/markDone/',authMiddleware.auth,(req,res)=>{
+    let changeTodoId = parseInt(req.query.id);
+    let todo = todos.find((todo)=> todo.id===changeTodoId);
+    if(todo){
+        if(todo.isCompleted===true)
+        {
+            todo.isCompleted = false
+        }
+        else{
+            todo.isCompleted = true
+        }
+        res.json({
+            todos
+        })
+    }else{
+        res.status(404).json({
+            message : "Todo Status Not Changed."
+        })
+    }
+})
 
 router.delete('/deleteTodo/',authMiddleware.auth,(req,res)=>{
     let deleteTodoId = parseInt(req.query.id);

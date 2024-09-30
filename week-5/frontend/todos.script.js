@@ -28,6 +28,7 @@ async function showTodos() {
       child.classList.add("todo");
 
       let todoTitle = document.createElement("h2");
+      todoTitle.setAttribute("id", `todo-title-${todoId}`); 
       todoTitle.innerHTML = todo.title;
 
       let task_no = document.createElement("h4");
@@ -71,6 +72,50 @@ async function showTodos() {
     console.error("Error fetching todos:", err);
     return;
   }
+}
+
+async function editTodo(id) {
+  // Get the current title element
+  let todoTitleElement = document.getElementById(`todo-title-${id}`);
+  
+  // Store the original title
+  let originalTitle = todoTitleElement.innerHTML;
+  
+  // Replace the title with an input field to allow editing
+  todoTitleElement.innerHTML = `
+    <input type="text" id="edit-input-${id}" value="${originalTitle}">
+    <button onclick="saveTodoEdit(${id})">Save</button>
+    <button onclick="cancelTodoEdit(${id}, '${originalTitle}')">Cancel</button>
+  `;
+}
+
+async function saveTodoEdit(id) {
+  let editedTitle = document.getElementById(`edit-input-${id}`).value;
+
+  try {
+    let res = await axios.put(
+      `http://localhost:3000/todo/changeTodo/?id=${id}`,
+      { title: editedTitle },
+      {
+        headers: {
+          token: token,
+        },
+      }
+    );
+
+    if (res) {
+      alert("Todo updated successfully");
+      showTodos(); // Refresh the todos list after saving
+    }
+  } catch (err) {
+    console.error("Error updating todo:", err);
+  }
+}
+
+function cancelTodoEdit(id, originalTitle) {
+  // Revert the title back to its original text if "Cancel" is clicked
+  let todoTitleElement = document.getElementById(`todo-title-${id}`);
+  todoTitleElement.innerHTML = originalTitle;
 }
 
 async function changeStatus(id){

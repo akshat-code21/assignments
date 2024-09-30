@@ -75,13 +75,13 @@ async function showTodos() {
 }
 
 async function editTodo(id) {
-  // Get the current title element
+  
   let todoTitleElement = document.getElementById(`todo-title-${id}`);
   
-  // Store the original title
+  
   let originalTitle = todoTitleElement.innerHTML;
   
-  // Replace the title with an input field to allow editing
+ 
   todoTitleElement.innerHTML = `
     <input type="text" id="edit-input-${id}" value="${originalTitle}">
     <button onclick="saveTodoEdit(${id})">Save</button>
@@ -105,7 +105,7 @@ async function saveTodoEdit(id) {
 
     if (res) {
       alert("Todo updated successfully");
-      showTodos(); // Refresh the todos list after saving
+      showTodos(); 
     }
   } catch (err) {
     console.error("Error updating todo:", err);
@@ -113,7 +113,7 @@ async function saveTodoEdit(id) {
 }
 
 function cancelTodoEdit(id, originalTitle) {
-  // Revert the title back to its original text if "Cancel" is clicked
+ 
   let todoTitleElement = document.getElementById(`todo-title-${id}`);
   todoTitleElement.innerHTML = originalTitle;
 }

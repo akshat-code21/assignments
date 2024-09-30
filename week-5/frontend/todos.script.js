@@ -43,6 +43,8 @@ async function showTodos() {
       else{
         statusDiv.innerHTML = "Completed";
         statusDiv.style.backgroundColor = "green";
+        todoTitle.style.textDecoration = "line-through"
+        todoTitle.style.color = "grey"
       }
       const date = new Date();
       let day = date.getDate();
@@ -83,15 +85,19 @@ async function editTodo(id) {
   
  
   todoTitleElement.innerHTML = `
-    <input type="text" id="edit-input-${id}" value="${originalTitle}">
-    <button onclick="saveTodoEdit(${id})">Save</button>
-    <button onclick="cancelTodoEdit(${id}, '${originalTitle}')">Cancel</button>
+    <input type="text" class='editInput' id="edit-input-${id}" value="${originalTitle}">
+    <button class="saveBtn" onclick="saveTodoEdit(${id})">Save</button>
+    <button class="cancelBtn" onclick="cancelTodoEdit(${id}, '${originalTitle}')">Cancel</button>
   `;
 }
 
 async function saveTodoEdit(id) {
   let editedTitle = document.getElementById(`edit-input-${id}`).value;
-
+  if(editedTitle==='')
+    {
+      alert('Please enter the changed Todo')
+      return;
+    }
   try {
     let res = await axios.put(
       `http://localhost:3000/todo/changeTodo/?id=${id}`,
@@ -113,7 +119,7 @@ async function saveTodoEdit(id) {
 }
 
 function cancelTodoEdit(id, originalTitle) {
- 
+  
   let todoTitleElement = document.getElementById(`todo-title-${id}`);
   todoTitleElement.innerHTML = originalTitle;
 }

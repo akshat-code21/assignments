@@ -1,4 +1,4 @@
-console.log("hi from todos.script.js");
+// console.log("hi from todos.script.js");
 
 let token = localStorage.getItem("token");
 let todoArrayC = 0;

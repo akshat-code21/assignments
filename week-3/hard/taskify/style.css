@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  user-select: none;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: coral;
+  height: 10vh;
+}
+header h1 {
+  font-size: 38px;
+}
+.container {
+  border: 2px solid black;
+  margin: auto;
+  margin-top: 80px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+  flex: 1;
+}
+.todoContainer {
+  border: 2px solid red;
+  /* height: 20vh; */
+  width: 20vw;
+  padding: 20px;
+  height: 100vh;
+}
+.desc{
+    color: rgb(119 144 180);
+}
+.heading {
+  font-size: 2em;
+  font-weight: bold;
+}
+.topic {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.todo {
+  margin-top: 10px;
+  border: 2px solid cornflowerblue;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 7px;
+  background-color: rgb(249 249 249) !important;
+}
+.category {
+  background-color: greenyellow;
+  padding: 5px;
+  border-radius: 15px;
+}
+.addTasks {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  color: white;
+  border-radius: 7px;
+  margin-top: 5px;
+  cursor: pointer;
+  
+}
+.addTasks button {
+  background-color: none;
+}
+.bottom {
+  margin-top: 10px;
+  display: flex;
+  font-size: 13px;
+  justify-content: space-between;
+  align-items: center;
+}
+.category {
+  border: 2px solid gray;
+}
+.in-progress {
+  border: 2px solid blue;
+  /* height: 20vh; */
+  width: 20vw;
+  padding: 20px;
+  height: 100vh;
+}
+.under-review {
+  border: 2px solid green;
+  /* height: 20vh; */
+  width: 20vw;
+  padding: 20px;
+  height: 100vh;
+}
+.finished {
+  border: 2px solid purple;
+  height: 100vh;
+  width: 20vw;
+  /* flex: 1;  */
+  padding: 20px;
+}

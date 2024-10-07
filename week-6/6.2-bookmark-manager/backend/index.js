@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const { addBookmark, deleteBookmark, getAllBookmarks } = require('./routes/bookmarks'); // importing callback functions for routes
 const app = express();
-const PORT = 3001;
+const PORT = 3000;
 
 app.use(cors());
 app.use(express.json());

@@ -2,12 +2,14 @@ let bookmarks = []; // in memory space
 
 async function addBookmark(req, res, next) {
   // write here
-  const { url } = req.body;
+  const url = req.body.url;
   if (url) {
-    let urlStr = url.toString();
-    bookmarks.push(urlStr);
+    bookmarks.push({
+        url : url
+    });
     res.json({
-         message : "Bookmark successfully added"
+         message : "Bookmark successfully added",
+         bookmark : bookmarks[bookmarks.length-1]
     })
     next();
   }

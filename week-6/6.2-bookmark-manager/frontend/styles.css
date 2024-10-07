@@ -1,32 +1,59 @@
-body {
- /*start here  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-  
+
+
 .container {
- /*start here  */
+  /*start here  */
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  padding: 30px;
+  margin-top: 100px;
+  gap: 20px;
 }
-  
+.input-container {
+  /*start here  */
+  border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* align-items: center; */
+  justify-content: center;
+  margin-top: 20px;
+  padding: 20px;
+}
+input[type='url']{
+  width: 100% !important;
+  padding: 10px;
+}
 h1 {
-   /*start here  */
+  /*start here  */
 }
-   
+
 button {
   /*start here  */
 }
-  
+
 #bookmark-list {
- /*start here  */
+  /*start here  */
+  list-style-type: none;
+  border: 2px solid blue;
 }
-  
+
 #bookmark-list li {
- /*start here  */
+  /*start here  */
 }
-  
+
 button.favorite-btn {
- /*start here  */
+  /*start here  */
 }
-  
+
 button.delete-btn {
- /*start here  */
+  /*start here  */
 }
-  

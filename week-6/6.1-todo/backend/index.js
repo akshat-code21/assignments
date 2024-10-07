@@ -1,13 +1,14 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const { getAllTodo, createTodo, updateTodo, deleteTodoById } = require('./routes/todo'); // importing callback functions for routes
 const app = express();
-const PORT = 3001;
+const PORT = 3000;
 
 app.use(cors());
 app.use(express.json());
 
-
+app.use(express.static(path.join(__dirname, '../frontend')));
 // Get all todos
 app.get('/todos', getAllTodo);
 

@@ -27,7 +27,7 @@ function addBookmarkToDOM(bookmark, idx) {
   //  start here
   let parent = document.getElementById("bookmark-list");
   let bookmarkHolder = document.createElement("li");
-  bookmarkHolder.innerHTML = `${bookmark} <span
+  bookmarkHolder.innerHTML = `<a href="${bookmark}" target="_blank">${bookmark} </a><span
             ><button class="operations" data-bookmarkIndex = ${idx}>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">                
                 <path

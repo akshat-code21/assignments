@@ -1,33 +1,37 @@
 let bookmarks = []; // in memory space
-
+let bookmarkId = 1;
 async function addBookmark(req, res, next) {
   // write here
   const url = req.body.url;
   if (url) {
     bookmarks.push({
-        url : url
+      bookmarkId: bookmarkId,
+      url: url,
     });
     res.json({
-         message : "Bookmark successfully added",
-         bookmark : bookmarks[bookmarks.length-1]
-    })
+      bookmarkId: bookmarkId,
+      message: "Bookmark successfully added",
+      bookmark: bookmarks[bookmarks.length - 1],
+    });
+    bookmarkId++;
     next();
-  }
-  else{
+  } else {
     res.status(403).json({
-        message : "Book mark not added"
-    })
+      message: "Book mark not added",
+    });
   }
 }
 
 async function deleteBookmark(req, res, next) {
   // write here
-  const deleteId = parseInt(req.params.id);
-  if (deleteId >= 0) {
-    bookmarks.splice(deleteId - 1, 1);
+  const bookmarkIdx = parseInt(req.params.id);
+  const bookmark = bookmarks.find((bookmark)=>bookmark.bookmarkId===bookmarkIdx)
+  const index = bookmarks.indexOf(bookmark)
+  if (index >= 0) {
+    bookmarks.splice(index, 1);
     res.json({
-        message : "Bookmark successfully deleted"
-    })
+      message: "Bookmark successfully deleted",
+    });
     next();
   } else {
     res.status(404).json({
@@ -39,13 +43,13 @@ async function deleteBookmark(req, res, next) {
 async function getAllBookmarks(req, res, next) {
   // write here
   res.json({
-    bookmarks : bookmarks,
-    message :"Bookmarks successfully fetched ",
-  })
-  next()
+    bookmarks: bookmarks,
+    message: "Bookmarks successfully fetched ",
+  });
+  next();
 }
-module.exports={
-    getAllBookmarks,
-    addBookmark,
-    deleteBookmark
-}
+module.exports = {
+  getAllBookmarks,
+  addBookmark,
+  deleteBookmark,
+};

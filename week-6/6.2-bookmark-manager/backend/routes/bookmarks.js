@@ -7,6 +7,7 @@ async function addBookmark(req, res, next) {
     bookmarks.push({
       bookmarkId: bookmarkId,
       url: url,
+      isFavourite: false,
     });
     res.json({
       bookmarkId: bookmarkId,
@@ -21,12 +22,51 @@ async function addBookmark(req, res, next) {
     });
   }
 }
-
+async function favouriteBookmark(req, res, next) {
+  const favouriteIdx = parseInt(req.params.id);
+  const bookmark = bookmarks.find(
+    (bookmark) => bookmark.bookmarkId === favouriteIdx
+  );
+  const index = bookmarks.indexOf(bookmark);
+  if (index >= 0) {
+    bookmark.isFavourite = true;
+    res.json({
+      bookmark: bookmark,
+      message: "Bookmark marked favourite successfully.",
+    });
+    next();
+  } else {
+    res.status(404).json({
+      message: "No such bookmark",
+    });
+  }
+}
+async function unFavouriteBookmark(req, res, next) {
+  const favouriteIdx = parseInt(req.params.id);
+  const bookmark = bookmarks.find(
+    (bookmark) => bookmark.bookmarkId === favouriteIdx
+  );
+  const index = bookmarks.indexOf(bookmark);
+  if (index >= 0) {
+    bookmark.isFavourite = false;
+    res.json({
+      bookmark: bookmark,
+      message: "Bookmark marked unfavourite successfully.",
+    });
+    next();
+  } else {
+    res.status(404).json({
+      message: "No such bookmark",
+    });
+  }
+}
 async function deleteBookmark(req, res, next) {
   // write here
   const bookmarkIdx = parseInt(req.params.id);
-  const bookmark = bookmarks.find((bookmark)=>bookmark.bookmarkId===bookmarkIdx)
-  const index = bookmarks.indexOf(bookmark)
+  const bookmark = bookmarks.find(
+    (bookmark) => bookmark.bookmarkId === bookmarkIdx
+  );
+  const index = bookmarks.indexOf(bookmark);
   if (index >= 0) {
     bookmarks.splice(index, 1);
     res.json({
@@ -52,4 +92,6 @@ module.exports = {
   getAllBookmarks,
   addBookmark,
   deleteBookmark,
+  favouriteBookmark,
+  unFavouriteBookmark
 };

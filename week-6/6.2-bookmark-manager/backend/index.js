@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const { addBookmark, deleteBookmark, getAllBookmarks } = require('./routes/bookmarks'); // importing callback functions for routes
+const { addBookmark, deleteBookmark, getAllBookmarks,favouriteBookmark,unFavouriteBookmark } = require('./routes/bookmarks'); // importing callback functions for routes
 const app = express();
 const PORT = 3000;
 
@@ -17,6 +17,9 @@ app.post('/bookmarks', addBookmark);
 
 // Delete a bookmark
 app.delete('/bookmarks/:id', deleteBookmark);
+
+app.patch('/favourite/:id',favouriteBookmark);
+app.patch('/unfavourite/:id',unFavouriteBookmark);
 
 //  TODO: Can u implement searching bookmark and favorite and unfavorite bookmark route ??
 

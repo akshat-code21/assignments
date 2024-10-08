@@ -2,8 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Afacad Flux", sans-serif;
 }
-
 
 .container {
   /*start here  */
@@ -16,38 +16,48 @@
   padding: 30px;
   margin-top: 100px;
   gap: 20px;
+  width: 100%;
 }
 .input-container {
   /*start here  */
   border: 2px solid red;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  /* align-items: center; */
+  gap: 20px;
+  width: 80%;
+  align-items: center;
   justify-content: center;
   margin-top: 20px;
-  padding: 20px;
-}
-input[type='url']{
-  width: 100% !important;
-  padding: 10px;
+  padding: 30px;
+  margin: auto;
 }
 h1 {
   /*start here  */
 }
-
+input {
+  width: 70%;
+  padding: 10px;
+  font-size: 1.2em;
+}
 button {
   /*start here  */
+  width: 20%;
+  padding: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 20px;
 }
 
 #bookmark-list {
   /*start here  */
   list-style-type: none;
   border: 2px solid blue;
+  padding: 10px;
 }
 
 #bookmark-list li {
   /*start here  */
+  font-size: 1.1em;
 }
 
 button.favorite-btn {

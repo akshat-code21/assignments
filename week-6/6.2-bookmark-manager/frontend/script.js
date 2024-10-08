@@ -17,7 +17,6 @@ async function fetchBookmarks() {
   //  start here
   document.getElementById('bookmark-list').innerHTML=""
   let response = await axios.get(API_URL);
-  console.log(response.data.bookmarks);
   let bookmarks1 = response.data.bookmarks;
   bookmarks1.forEach((bookmark) => {
     addBookmarkToDOM(bookmark.url, bookmark.bookmarkId);
@@ -40,8 +39,6 @@ function addBookmarkToDOM(bookmark, idx) {
         `;
   bookmarkHolder.dataset.bookmarkIndex = idx;
   parent.appendChild(bookmarkHolder);
-  console.log(bookmarkHolder);
-  //   fetchBookmarks()
   setDeleteButtons();
 }
 function setDeleteButtons() {
@@ -65,7 +62,7 @@ document
     try {
       const url = document.getElementById("bookmark-url").value;
       if (!validateURL(url)) {
-        alert("not a valid url");
+        alert("Not A Valid URL");
         return;
       }
       let response = await axios.post(API_URL, {
@@ -76,7 +73,7 @@ document
         alert(response.data.message);
         document.getElementById("bookmark-url").value = "";
       } else {
-        console.log("bookmark not added");
+        alert("Bookmark Not Added");
       }
     } catch (e) {
       alert("Please enter a bookmark");
@@ -90,10 +87,9 @@ async function deleteBookmark(id) {
   try {
     let deleteIndex = id;
     let response = await axios.delete(`${API_URL}/${deleteIndex}`);
+    alert(response.data.message)
     fetchBookmarks()
-    console.log(response);
-    console.log(id);
   } catch (e) {
-    console.log(e);
+    alert("Bookmark not deleted.");
   }
 }

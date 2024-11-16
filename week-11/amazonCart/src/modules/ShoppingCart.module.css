@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.parent{
+    border : 2px solid white;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 20px;
+    gap: 10px;
+    border-bottom-right-radius: 7px;
+    border-top-right-radius: 7px;
+    box-shadow: 2px solid white;
+}
+.heading{
+    font-weight: 800;
+}
+.itemCard{
+    /* border: 2px solid green; */
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+    border-bottom: 2px solid hsl(240deg 5.88% 90%);
+}
+.itemImage{
+    width: 20%;
+    height: 200px;
+    background-color: rgb(187, 184, 184);
+    /* border : 2px solid aqua; */
+}
+.itemDetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* border : 2px solid aqua; */
+    width: 70%;
+    gap: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.itemTitle{
+    font-weight: 600;
+}
+.itemStatus{
+    color : green;
+    font-weight: 600;
+}
+.itemOperations{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap : 10px;
+}
+.opn{
+    background-color: rgb(186, 185, 185);
+    padding: 10px;
+    cursor: pointer;
+}
+.delete{
+    color : #4577f5;
+    cursor: pointer;
+}
+.itemPrice{
+    padding: 10px;
+    /* border : 2px solid aqua; */
+    width: 15%;
+    font-weight: 600;
+    text-align: right;
+}

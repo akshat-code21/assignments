@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.parent {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.box {
+  background-color: rgb(216, 211, 211);
+  padding: 15px;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.boxHeading {
+  font-weight: 800;
+  font-size: 20px;
+}
+.sideBar {
+  width: 20%;
+  /* border: 2px solid blue; */
+  height: 100vh;
+  padding: 20px;
+}
+.mainContent {
+  width: 80%;
+  /* border: 2px solid blue; */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  /* flex-wrap: wrap; */
+}
+.topBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* border: 2px solid green; */
+  align-items: center;
+  padding: 10px;
+}
+.options {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+.shareOptions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.shareOptions span {
+  font-size: 14px;
+  color: blue;
+}
+.icon {
+  color: blue;
+  font-size: 24px;
+}
+.dots {
+  font-size: 24px;
+}
+.secondBar {
+  /* border: 2px solid green; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+.searchArea {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.searchInput input {
+  padding: 2px 0 2px 0;
+}
+.filterOption {
+  padding: 10px 0 10px 0;
+}
+.viewingOptions{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 10px;
+}
+.gridIcon{
+    font-size: 24px;
+}
+.listIcon{
+    font-size: 20px;
+}
+.itemsArea{
+    /* border: 2px solid green; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 16px; /* Space between items */
+}
+.itemCard{
+    border:  2px solid hsl(240deg 5.88% 90%);
+    flex: 1 1 200px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    border-radius: 8px;
+}
+.itemTitle{
+    font-weight: 800;
+}
+.itemPrice{
+    font-weight: 600;
+}
+.button{
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    background-color: hsl(48deg 95.83% 52.94%);
+    font-weight: 800;
+    border-radius: 6px;
+}

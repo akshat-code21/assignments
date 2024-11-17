@@ -131,3 +131,8 @@
     font-weight: 800;
     border-radius: 6px;
 }
+.modal{
+  background-color: white;
+  margin : auto;
+  z-index: 1000;
+}
